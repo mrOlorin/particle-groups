@@ -1,0 +1,74 @@
+:host {
+  // opacity: .05;
+  transition: opacity 400ms ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+button, mat-form-field {
+  margin: .5em;
+}
+
+app-stats {
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+}
+
+.renew {
+  opacity: .25;
+  transition: opacity 300ms ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+section {
+  position: absolute;
+  transform: translateX(-100%);
+  #clear {
+    position: absolute;
+    right: 4px;
+  }
+}
+
+mat-chip-list {
+  display: flex;
+  width: max-content;
+  margin: 1em .5em;
+
+  mat-chip {
+    cursor: pointer;
+    min-width: 12ch;
+    justify-content: space-around;
+
+    &:first-child {
+      margin-right: 1em;
+    }
+
+    span.wheelable {
+      &:hover {
+        &::after {
+          content: "▴▾";
+          display: inline-block;
+          position: absolute;
+          width: 1ch;
+          word-break: break-all;
+          line-height: .8em;
+          margin-top: -2px;
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+
+  mat-icon {
+    --size: 1em;
+    width: var(--size);
+    height: var(--size);
+    font-size: var(--size);
+  }
+}

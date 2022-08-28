@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent
+  )
+));
+
+// Include all theme styles for the components.
+@include mat.all-component-themes($theme);
+body > svg {
+  display: none;
+}
+
+canvas {
+  position: fixed;
+  display: block;
+  top: 0;
+  z-index: -1;
+}
+
+.mat-grid-tile {
+  overflow: visible !important;
+}
